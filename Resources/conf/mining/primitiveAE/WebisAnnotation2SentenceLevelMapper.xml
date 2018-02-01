@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>  <annotatorImplementationName>mining.argumentation.WebisAnnotation2SentenceLevelMapper</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>WebisAnnotation2SentenceLevelMapper</name>
+    <description>This analysis engine processes texts with annotations of a specific type and replaces them by sentence-level annotations of the same type using a specified type priority list
+
+It needs sentence annotations and annotations of the respective type as input and adds sentence-level annotations to the text. The former annotations are removed.</description>
+    <version>1.0</version>
+    <vendor>Webis</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>SkipTitle</name>
+        <description>Whether to skip the title of a text or not</description>
+        <type>Boolean</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    <configurationParameter>
+        <name>AnnotationType</name>
+        <description>The type of the annotations that shall be mapped to sentence-level annotations</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>AnnotationFeature</name>
+        <description>The feature of the annotation type to be mapped. Decides about what annotation within a sentence is taken following the given type priorities</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>FeaturePriorities</name>
+        <description>The ordered list of priorities of features of the annotation type to be mapped.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>SkipTitle</name>
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </nameValuePair>
+    <nameValuePair>
+        <name>AnnotationType</name>
+        <value>
+          <string>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>AnnotationFeature</name>
+        <value>
+          <string>unitType</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>FeaturePriorities</name>
+        <value>
+          <array>
+            <string>common-ground</string>
+            <string>statistics</string>
+            <string>testimony</string>
+            <string>anecdote</string>
+            <string>assumption</string>
+            <string>other</string>
+            <string>no-unit</string>
+          </array>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/type-systems/ArgumentationTypeSystem.xml"/>
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/type-systems/ArguAnaTypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities>
+      <priorityList>
+        <type>de.aitools.ie.uima.type.arguana.Body</type>
+        <type>de.aitools.ie.uima.type.core.Paragraph</type>
+        <type>de.aitools.ie.uima.type.core.Sentence</type>
+        <type>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        <type>de.aitools.ie.uima.type.core.Token</type>
+        <type>de.aitools.ie.uima.type.core.Syllable</type>
+      </priorityList>
+    </typePriorities>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">de.aitools.ie.uima.type.core.Sentence</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

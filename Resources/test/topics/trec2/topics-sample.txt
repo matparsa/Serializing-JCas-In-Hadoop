@@ -1,0 +1,124 @@
+<top>
+
+<head> Tipster Topic Description
+
+
+<num> Number: 101
+
+
+<dom> Domain: Science and Technology 
+
+
+<title> Topic: Design of the "Star Wars" Anti-missile Defense System
+
+
+<desc> Description:
+
+Document will provide information on the proposed configuration, components, 
+and technology of the U.S.'s "star wars" anti-missile defense system. 
+
+
+<smry> Summary:
+
+Document will provide information on the proposed configuration, components, 
+and technology of the U.S.'s "star wars" anti-missile defense system. 
+
+
+<narr> Narrative:
+
+A relevant document will provide information which aids description of the 
+design and technology to be used in the anti-missile defense system advocated
+by the Reagan administration, the Strategic Defense Initiative (SDI), also 
+known as "star wars."  Any reported changes to original design, or any 
+research results which might lead to changes of constituent technologies, 
+are also relevant documents.  However, reports on political debate over the 
+SDI, or arms control negotiations which might encompass the SDI, are NOT 
+relevant to the science and technology focus of this topic, unless they 
+provide specific information on design and technology.   
+
+
+<con> Concept(s):
+
+1. Strategic Defense Initiative, SDI, star wars, peace shield
+
+2. kinetic energy weapon, kinetic kill, directed energy weapon, laser, 
+   particle beam, ERIS (exoatmospheric reentry-vehicle interceptor system), 
+   phased-array radar, microwave
+
+3. anti-satellite (ASAT) weapon, spaced-based technology, strategic defense 
+   technologies
+
+
+<fac> Factor(s):
+
+<nat> Nationality: U.S.
+
+</nat>
+
+
+<def> Definition(s):
+
+</top>
+
+
+
+
+
+<top>
+
+<head> Tipster Topic Description
+
+
+<num> Number: 102
+
+
+<dom> Domain: Science and Technology 
+
+
+<title> Topic: Laser Research Applicable to the U.S.'s Strategic Defense 
+Initiative
+
+
+<desc> Description:
+
+Document will report on laser research related, or potentially related, to 
+the U.S.'s Strategic Defense Initiative.
+
+
+<smry> Summary:
+
+Document will report on laser research related, or potentially related, to 
+the U.S.'s Strategic Defense Initiative.
+
+
+<narr> Narrative:
+
+A relevant document will provide information on laser research which is 
+either explicitly linked to the U.S.'s Strategic Defense Initiative (SDI, 
+also known as "star wars") or which has potential applicability to the 
+development of SDI laser technology.  Potentially relevant research could be 
+referred to as research into directed energy weapons, or high energy lasers, 
+or, more generally, referred to as military laser research.  A relevant 
+document could take many forms -- award of contract, report of research 
+results, or abstract of a professional paper on lasers.  However, a document 
+clearly focused on use of low-power lasers in consumer products, surgical 
+instruments, or industrial cutting tools is NOT relevant.
+
+
+<con> Concept(s):
+
+1. Strategic Defense Initiative, SDI, star wars, peace shield
+
+2. laser, directed energy weapon, high energy weapon
+
+
+<fac> Factor(s):
+
+<nat> Nationality: U.S.
+
+</nat>
+
+
+<def> Definition(s):
+
+</top>

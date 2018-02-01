@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nitf SYSTEM "http://www.nitf.org/IPTC/NITF/3.3/specification/dtd/nitf-3-3.dtd">
+<nitf change.date="June 10, 2005" change.time="19:30" version="-//IPTC//DTD NITF 3.3//EN">
+  <head>
+    <title>Prices Rise Again, Modestly</title>
+    <meta content="21" name="publication_day_of_month"/>
+    <meta content="1" name="publication_month"/>
+    <meta content="1987" name="publication_year"/>
+    <meta content="Wednesday" name="publication_day_of_week"/>
+    <meta content="Financial Desk" name="dsk"/>
+    <meta content="16" name="print_page_number"/>
+    <meta content="D" name="print_section"/>
+    <meta content="4" name="print_column"/>
+    <meta content="Business" name="online_sections"/>
+    <docdata>
+      <doc-id id-string="5579"/>
+      <doc.copyright holder="The New York Times" year="1987"/>
+      <series series.name="CREDIT MARKETS"/>
+      <identified-content>
+        <classifier class="indexing_service" type="descriptor">CREDIT</classifier>
+        <classifier class="indexing_service" type="descriptor">GOVERNMENT BONDS</classifier>
+        <classifier class="indexing_service" type="descriptor">PRICES</classifier>
+        <person class="indexing_service">QUINT, MICHAEL</person>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/News/Business</classifier>
+        <classifier class="online_producer" type="taxonomic_classifier">Top/Classifieds/Job Market/Job Categories/Banking, Finance and Insurance</classifier>
+        <classifier class="online_producer" type="general_descriptor">Credit</classifier>
+        <classifier class="online_producer" type="general_descriptor">Government Bonds</classifier>
+        <classifier class="online_producer" type="general_descriptor">Prices (Fares, Fees and Rates)</classifier>
+        <classifier class="online_producer" type="general_descriptor">Stocks and Bonds</classifier>
+        <classifier class="online_producer" type="general_descriptor">Finances</classifier>
+      </identified-content>
+    </docdata>
+    <pubdata date.publication="19870121T000000" ex-ref="http://query.nytimes.com/gst/fullpage.html?res=9B0DE0DB1E3DF932A15752C0A961948260" item-length="944" name="The New York Times" unit-of-measure="word"/>
+  </head>
+  <body>
+    <body.head>
+      <hedline>
+        <hl1>Prices Rise Again, Modestly</hl1>
+      </hedline>
+      <byline class="print_byline">By MICHAEL QUINT</byline>
+      <byline class="normalized_byline">QUINT, MICHAEL</byline>
+    </body.head>
+    <body.content>
+      <block class="lead_paragraph">
+        <p>LEAD: Treasury bond prices rose modestly for the third consecutive day, but without the ebullience of the stock market.</p>
+      </block>
+      <block class="full_text">
+        <p>LEAD: Treasury bond prices rose modestly for the third consecutive day, but without the ebullience of the stock market.</p>
+        <p>Treasury bond prices rose modestly for the third consecutive day, but without the ebullience of the stock market.</p>
+        <p>Although securities dealers discerned enough investor demand to offer more than $1.1 billion of new corporate issues, they noted that the Treasury market has been restrained by the absence of good foreign demand. Domestic investors' concerns about higher inflation and big budget deficits have also hurt.</p>
+      </block>
+    </body.content>
+  </body>
+</nitf>

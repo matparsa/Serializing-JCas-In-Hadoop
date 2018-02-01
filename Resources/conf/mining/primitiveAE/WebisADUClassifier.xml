@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>  <annotatorImplementationName>de.aitools.ie.uima.analysis.categorization.WebisADUClassifier</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>WebisADUClassifier</name>
+    <description>Weka-based machine learning classifier that classifies a given text span regarding what type of argumentative discourse unit (ADU) it primarily represents. 
+
+Needs paragraphs, sentences, andtokens with part-of-speech and lemma as input and  produces argumentative discourse unit annotations with set unit  type.  
+
+Meant to be used for English texts only.
+
+The size of the spans are set via the respective parameter (defined in the  superclass of this class). The same holds for features to be used and the  machine learning model to be used.  
+
+What types of argumentative units are distinguished depends on the output class values of the used machine learning model. The output class value of  the model is mapped to a unit type label according to a mapping also  specified via a respective parameter.
+
+By default, the classifier is configured for the application to persuasive essays.
+</description>
+    <version>1.0</version>
+    <vendor>Webis</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>WekaModelPath</name>
+        <description>The path of the Weka machine learning model to be used for classification.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>WekaDatasetPath</name>
+        <description>The path of the dataset the used Weka machine learning model is based on.</description>
+        <type>String</type>
+        <multiValued>true</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>FeatureConfigPath</name>
+        <description>The path of the configuration file required for the feature computation. If not specified, no parameters are handed over to the feature computation class.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>FeatureClassName</name>
+        <description>The fully qualified name of Java class to be used for feature computation.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    <configurationParameter>
+        <name>AnnotationClassName</name>
+        <description>The name of the annotation type that that captures the spans to be classified. If not set, the complete given texts are classified as a whole.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>ClassMappingPath</name>
+        <description>The path of the text file where the mapping from Weka class values to output class labels is defined. If no path is specified, no mapping takes place but the Weka class values are used as output.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    <configurationParameter>
+        <name>FeatureNormalizationPath</name>
+        <description>The path of the configuration file required for the feature normalization. If not specified, no parameters are handed over to the feature computation class.</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>FeatureConfigPath</name>
+        <value>
+          <string>models/WebisADUClassifier/feature-config_debate-adus.properties</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>FeatureClassName</name>
+        <value>
+          <string>mining.argumentation.features.ADUAllWebisDebateFeatures</string>
+        </value>
+      </nameValuePair>
+    <nameValuePair>
+        <name>AnnotationClassName</name>
+        <value>
+          <string>de.aitools.ie.uima.type.core.Sentence</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>ClassMappingPath</name>
+        <value>
+          <string>Resources/models/WebisADUClassifier/class-mapping_debate-adus-2cl.txt</string>
+        </value>
+      </nameValuePair>
+    <nameValuePair>
+        <name>FeatureNormalizationPath</name>
+        <value>
+          <string>Resources/models/WebisADUClassifier/normalization_debate-adus.properties</string>
+        </value>
+      </nameValuePair>
+    <nameValuePair>
+        <name>WekaModelPath</name>
+        <value>
+          <array>
+            <string>Resources/models/WebisADUClassifier/adu-en-debate-sentence-smo-3-7-4.model</string>
+          </array>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>WekaDatasetPath</name>
+        <value>
+          <array>
+            <string>Resources/models/WebisADUClassifier/adu-en-debate-sentence-dataset.arff</string>
+          </array>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/type-systems/ArgumentationTypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities>
+      <priorityList>
+        <type>de.aitools.ie.uima.type.core.Paragraph</type>
+        <type>de.aitools.ie.uima.type.core.Sentence</type>
+        <type>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        <type>de.aitools.ie.uima.type.core.Token</type>
+      </priorityList>
+    </typePriorities>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type>de.aitools.ie.uima.type.core.Token</type>
+          <type allAnnotatorFeatures="true">de.aitools.ie.uima.type.core.Sentence</type>
+          <type allAnnotatorFeatures="true">de.aitools.ie.uima.type.core.Paragraph</type>
+          <feature>de.aitools.ie.uima.type.core.Token:pos</feature>
+          <feature>de.aitools.ie.uima.type.core.Token:lemma</feature>
+          <feature>de.aitools.ie.uima.type.core.Token:end</feature>
+          <feature>de.aitools.ie.uima.type.core.Token:begin</feature>
+          <feature>de.aitools.ie.uima.type.core.Token:sofa</feature>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

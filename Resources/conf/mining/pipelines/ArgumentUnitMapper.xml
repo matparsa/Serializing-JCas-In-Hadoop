@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+  	 <delegateAnalysisEngine key="InfexBAParagraphSplitter">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/InfexBAParagraphSplitter.xml"/>
+    </delegateAnalysisEngine>
+      <delegateAnalysisEngine key="InfexBASentenceSplitter">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/InfexBASentenceSplitter.xml"/>
+    </delegateAnalysisEngine>    
+    <delegateAnalysisEngine key="ArgumentativeSentenceMapper">
+      <import location="../primitiveAE/WebisAnnotation2SentenceLevelMapper.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+  <name>ArgumentUnitSegmenter</name>
+  <description>This pipeline should convert the argument components in a document to IOB formant for evaluation of unit segmentation</description>
+    <version>1.0</version>
+    <vendor>Webis</vendor>
+    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+      	<node>InfexBAParagraphSplitter</node>
+        <node>InfexBASentenceSplitter</node>
+        <node>ArgumentativeSentenceMapper</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities>
+      <priorityList>
+        <type>de.aitools.ie.uima.type.core.Sentence</type>
+      </priorityList>
+    </typePriorities>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <outputs>
+        	<type>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        </outputs>
+     </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

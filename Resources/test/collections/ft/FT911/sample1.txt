@@ -1,0 +1,35 @@
+<DOC>
+<DOCNO>FT921-1</DOCNO>
+<PROFILE>_AN-CDAB2AAEFT</PROFILE>
+<DATE>920331
+</DATE>
+<HEADLINE>
+FT  31 MAR 92 / International Company News: Rhone-Poulenc and SNIA in
+European link
+</HEADLINE>
+<BYLINE>
+   By REUTER
+</BYLINE>
+<TEXT>
+RHONE-POULENC, the French chemicals and pharmaceuticals group, and SNIA
+Fibre, a unit of Fiat's SNIA offshoot, plan to merge their European
+activities in polyamide carpet yarn (BCF) and polyamide staple fibre, Reuter
+reports.
+Rhone-Poulenc said the merged unit, held 50-50 by itself and SNIA, will have
+estimated annual turnover of FFr1.8bn (Dollars 322.8m) and employ about
+1,500 people.
+The joint venture will be Europe's largest carpet staple fibre and BCF
+polyamide producer. It will be a leading producer of polyamide staple fibre
+for textile and industrial uses.
+Mediobanca yesterday revealed that gross profit fell to L340.4bn (Dollars
+274.7m) in the first half, from L354.7bn in the previous year.
+But in the eight months to the end of February this year, gross profit stood
+at L409.8bn, slightly up from L407.9bn in the same period the year before,
+the bank said.
+</TEXT>
+<PUB>The Financial Times
+</PUB>
+<PAGE>
+International Page 22
+</PAGE>
+</DOC>

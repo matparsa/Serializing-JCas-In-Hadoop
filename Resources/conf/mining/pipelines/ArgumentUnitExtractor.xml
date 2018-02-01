@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+  	<delegateAnalysisEngine key="DummyAnalysisEngine">
+  		<import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/template/DummyAnalysisEngine.xml"/>
+  	</delegateAnalysisEngine>
+  	<delegateAnalysisEngine key="InfexBAParagraphSplitter">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/InfexBAParagraphSplitter.xml"/>
+    </delegateAnalysisEngine>
+      <delegateAnalysisEngine key="InfexBASentenceSplitter">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/InfexBASentenceSplitter.xml"/>
+    </delegateAnalysisEngine>    
+    <delegateAnalysisEngine key="InfexBATokenizer">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/InfexBATokenizer.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TT4jLemmaAndPartOfSpeechTagger">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/tagging/TT4jLemmaAndPartOfSpeechTagger.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TT4jPhraseChunker">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/parsing/TT4jPhraseChunker.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TextHyphJSyllableDetector">
+      <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/primitive-AEs/segmentation/TextHyphJSyllableDetector.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="WebisADUClassifier">
+      <import location="../primitiveAE/WebisADUClassifier.xml"/>
+  	</delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+  <name>ArgumentUnitSegmenter</name>
+  <description>This pipeline should convert the argument components in a document to IOB formant for evaluation of unit segmentation</description>
+    <version>1.0</version>
+    <vendor>Webis</vendor>
+    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+      	<node>DummyAnalysisEngine</node>
+      	<node>InfexBAParagraphSplitter</node>
+        <node>InfexBASentenceSplitter</node>
+        <node>InfexBATokenizer</node>
+        <node>TT4jLemmaAndPartOfSpeechTagger</node>
+        <node>TT4jPhraseChunker</node>
+        <node>TextHyphJSyllableDetector</node>
+        <node>WebisADUClassifier</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities>
+      <priorityList>
+        <type>uima.tcas.DocumentAnnotation</type>
+        <type>de.aitools.ie.uima.type.arguana.Body</type>
+        <type>de.aitools.ie.uima.type.core.Paragraph</type>
+        <type>de.aitools.ie.uima.type.core.Sentence</type>
+      <type>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        <type>de.aitools.ie.uima.type.core.Token</type>
+      <type>de.aitools.ie.uima.type.core.Syllable</type>
+      </priorityList>
+    </typePriorities>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <outputs>
+        	<type>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        </outputs>
+     </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

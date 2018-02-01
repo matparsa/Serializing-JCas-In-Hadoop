@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>  
+  <annotatorImplementationName>mining.argumentation.ArgumentUnitToSentencesMapper</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>mining.argumentation.SentenceArgumentUnitMapper</name>
+    <description>This analysis engine convert the argument unit annotations to match sentences</description>
+    <version>1.0</version>
+    <vendor>Webis</vendor>
+    <typeSystemDescription>
+      <imports>
+        <import location="../../../../../aitools4-ie-uima/conf/uima-descriptors/type-systems/ArgumentationTypeSystem.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities>
+      <priorityList>
+        <type>de.aitools.ie.uima.type.core.Paragraph</type>
+        <type>de.aitools.ie.uima.type.core.Sentence</type>
+        <type>de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+      </priorityList>
+    </typePriorities>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+        	<type allAnnotatorFeatures="true">de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        </inputs>
+        <outputs>
+            <type allAnnotatorFeatures="true">de.aitools.ie.uima.type.argumentation.ArgumentativeDiscourseUnit</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
